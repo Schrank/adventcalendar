@@ -15,7 +15,6 @@ if (!file_exists($file)) {
 $alreadyOpen = (date('j') >= $day);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,12 +40,9 @@ $alreadyOpen = (date('j') >= $day);
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        /*
- * Globals
- */
-
         img {
             max-width: 100%;
+            max-height: 100%;
         }
 
         /* Links */
@@ -55,20 +51,6 @@ $alreadyOpen = (date('j') >= $day);
         a:hover {
             color: #fff;
         }
-
-        /* Custom default button */
-        .btn-default,
-        .btn-default:hover,
-        .btn-default:focus {
-            color: #333;
-            text-shadow: none; /* Prevent inheritence from `body` */
-            background-color: #fff;
-            border: 1px solid #fff;
-        }
-
-        /*
-         * Base structure
-         */
 
         html,
         body {
@@ -105,14 +87,7 @@ $alreadyOpen = (date('j') >= $day);
         /* Padding for spacing */
         .inner {
             padding: 30px;
-        }
-
-        /*
-         * Header
-         */
-        .masthead-brand {
-            margin-top: 10px;
-            margin-bottom: 10px;
+            height: 92vh;
         }
 
         .masthead-nav > li {
@@ -148,69 +123,17 @@ $alreadyOpen = (date('j') >= $day);
         }
 
         @media (min-width: 768px) {
-            .masthead-brand {
-                float: left;
-            }
-
-            .masthead-nav {
-                float: right;
-            }
-        }
-
-        /*
-         * Cover
-         */
-
-        .cover {
-            padding: 0 20px;
-        }
-
-        .cover .btn-lg {
-            padding: 10px 20px;
-            font-weight: bold;
-        }
-
-        /*
-         * Footer
-         */
-
-        .mastfoot {
-            color: #999; /* IE8 proofing */
-            color: rgba(255, 255, 255, .5);
-        }
-
-        /*
-         * Affix and center
-         */
-
-        @media (min-width: 768px) {
-            /* Pull out the header and footer */
-            .masthead {
-                position: fixed;
-                top: 0;
-            }
-
-            .mastfoot {
-                position: fixed;
-                bottom: 0;
-            }
-
             /* Start the vertical centering */
             .site-wrapper-inner {
                 vertical-align: middle;
             }
 
-            /* Handle the widths */
-            .masthead,
-            .mastfoot,
             .cover-container {
                 width: 100%; /* Must be percentage or pixels for horizontal alignment */
             }
         }
 
         @media (min-width: 992px) {
-            .masthead,
-            .mastfoot,
             .cover-container {
                 width: 900px;
             }
@@ -221,24 +144,17 @@ $alreadyOpen = (date('j') >= $day);
 <body>
 
 <div class="site-wrapper">
-
     <div class="site-wrapper-inner">
-
         <div class="cover-container">
-
-
             <div class="inner cover">
                 <?php if ($alreadyOpen): ?>
                     <img src="<?php echo $file; ?>"/>
-                    <?php else: ?>
+                <?php else: ?>
                     <h1 class="cover-heading">Dieses Türchen ist noch geschlossen.</h1>
                 <?php endif; ?>
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 <!-- Bootstrap core JavaScript
